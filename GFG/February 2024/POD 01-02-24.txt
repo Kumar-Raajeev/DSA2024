@@ -1,0 +1,26 @@
+class Solution
+{
+    //Function to check if a string is Pangram or not.
+    public static boolean checkPangram  (String s) {
+        // your code here
+        
+        String lo_str = s.toLowerCase();
+Set<Character> charSetStr = new TreeSet<Character>();
+ 
+for (int i = 0; i < lo_str.length(); i++) {
+char val = lo_str.charAt(i);
+ 
+if (val >= 97 && val <= 122) {
+charSetStr.add(val);
+}
+}
+int count = 0;
+for (char i : charSetStr) {
+count++;
+}
+ 
+return (count == 26) ? true : false;
+        
+        
+    }
+}
