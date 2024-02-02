@@ -1,0 +1,27 @@
+class Solution
+{
+    int atoi(String s) {
+    // Your code here
+        int ans = 0;
+        boolean isneg = false;
+        if(s.charAt(0) == '-'){
+            isneg = true;
+        }
+        int st = 0;
+        if(isneg){
+            st++;
+        }
+        for(int i = st; i < s.length() ; i++){
+            if(s.charAt(i) >= '0' && s.charAt(i) <='9'){
+                ans = ans*10 + s.charAt(i)-'0';
+            }
+            else{
+                return -1;
+            }
+        }
+        if(isneg){
+            return ans*-1;
+        }
+        return ans;
+    }
+}
