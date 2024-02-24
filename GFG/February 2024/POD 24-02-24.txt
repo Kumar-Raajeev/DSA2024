@@ -1,0 +1,22 @@
+class Solution
+{
+    public int maxSum(int n) 
+    { 
+        //code here.
+        long a = rec(n);
+      return  (int)Math.max(a,(long)n);
+        
+    } 
+    public static long rec(int n)
+    {
+        if(n <=4)
+        {
+            return n;
+        }
+        
+        long a = rec(n/2);
+        long b = rec(n/3);
+        long c = rec(n/4);
+        return Math.max(a,n/2) + Math.max(b,n/3) + Math.max(c,n/4);
+    }
+}
