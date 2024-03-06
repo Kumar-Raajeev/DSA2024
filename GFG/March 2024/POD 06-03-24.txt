@@ -1,0 +1,24 @@
+class Solution
+{
+    
+    ArrayList<Integer> search(String pattern, String text)
+    {
+        // your code here
+        ArrayList<Integer> ans=new ArrayList<Integer>();
+        String str="";
+        int j=pattern.length()-1;
+        for(int i=0;j<text.length();i++)
+        {
+            str=text.substring(i,j+1);
+            if(str.equals(pattern))
+            {
+                ans.add(i+1);
+                
+            }
+            str="";
+            j++;
+        }
+        return ans;
+        
+    }
+}
