@@ -1,0 +1,24 @@
+class Solution {
+    static int t;
+    public static int pairsViolatingBST(int n, Node root) {
+        int[] array = new int[n];
+        int pairsVoilating = 0;
+        inorderTraversal(root, array);
+        
+        for(int i = 0; i < n -1; i ++){
+            for(int j = i + 1; j < n; j ++){
+                if(array[i] > array[j])
+                    pairsVoilating ++;
+            }
+        }
+        return pairsVoilating;
+    }
+    
+    public static void inorderTraversal(Node root, int[] array){
+        if(root == null) return; 
+        
+        inorderTraversal(root.left, array);
+        array[t++] = root.data;
+        inorderTraversal(root.right, array);
+    }
+}
